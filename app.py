@@ -134,3 +134,5 @@ async def generate(request: PromptRequest):
         ),
         "response": model_response
     }
+
+    ### Thank you ###
