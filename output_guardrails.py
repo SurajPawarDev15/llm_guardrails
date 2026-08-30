@@ -61,3 +61,5 @@ def check_output(output: str) -> dict:
         "category": "SAFE",
         "message": "Output passed the guardrail."
     }
+
+### Thank you ###
