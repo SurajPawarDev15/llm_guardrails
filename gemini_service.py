@@ -23,3 +23,5 @@ def generate_response(prompt: str) -> str:
         raise RuntimeError(
             "Gemini model is temporarily unavailable. Please try again later."
         ) from exc
+
+### Thank you ###    

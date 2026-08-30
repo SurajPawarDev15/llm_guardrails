@@ -13,3 +13,5 @@ if not GEMINI_API_KEY:
     raise RuntimeError(
         "GEMINI_API_KEY is not set. Please add it to the .env file."
     )
+
+### Thank you ###    
