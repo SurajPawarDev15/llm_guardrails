@@ -178,3 +178,6 @@ def check_input(user_input: str) -> dict:
         "category": "SAFE",
         "message": "Input passed all guardrails."
     }
+
+
+### Thank you ###
