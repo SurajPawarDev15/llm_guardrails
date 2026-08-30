@@ -6,7 +6,7 @@ load_dotenv()
 
 # Gemini configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.7-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemma3:270m")
 
 # Validate API key
 if not GEMINI_API_KEY:

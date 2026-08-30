@@ -3,62 +3,135 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LLM Guardrails | Suraj Sanjeev Pawar</title>
+        <title>Sentinel AI | LLM Guardrails</title>
         <link rel="stylesheet" href="/static/style.css">
     </head>
 
     <body>
-        <div class="page">
+        <div class="page-shell">
+            <div class="background-grid"></div>
 
-            <header class="header">
-                <div class="badge">AI SECURITY WORKSHOP</div>
+            <header class="topbar">
+                <div class="brand">
+                    <div class="brand-mark">S</div>
+                    <div>
+                        <span class="eyebrow">AI SECURITY PLATFORM</span>
+                        <strong>Sentinel AI</strong>
+                    </div>
+                </div>
 
-                <h1>🛡️ LLM Guardrails</h1>
+                <nav class="nav">
+                    <a href="#">Threat Scan</a>
+                    <a href="#">Guardrails</a>
+                    <a href="#">Monitoring</a>
+                </nav>
 
-                <p class="author-line">By Prakash Senapati</p>
-
-                <p class="subtitle">
-                    Responsible AI • Enterprise AI • AI Security
-                </p>
+                <button class="ghost-button">Live Monitor</button>
             </header>
 
-            <main class="card">
+            <main class="dashboard">
+                <section class="hero panel">
+                    <div class="hero-copy">
+                        <div class="badge">ENTERPRISE AI DEFENSE</div>
+                        <h1>Secure every prompt before it reaches your
+                            model.</h1>
+                        <p>
+                            Multi-layered security controls detect malicious
+                            prompts,
+                            prevent jailbreak attempts, and validate AI output
+                            before
+                            it reaches users.
+                        </p>
 
-                <section class="prompt-section">
-                    <h2>Test Your LLM</h2>
-
-                    <p class="description">
-                        Enter a prompt and observe how the guardrail pipeline
-                        processes it.
-                    </p>
-
-                    <textarea
-                        id="prompt"
-                        maxlength="5000"
-                        placeholder="Enter your prompt here..."></textarea>
-
-                    <div class="character-count">
-                        <span id="characterCount">0</span>
-                        / 5000 characters
+                        <div class="hero-actions">
+                            <span>Encrypted</span>
+                            <span>Deep Scan</span>
+                            <span>Zero Trust</span>
+                        </div>
                     </div>
 
-                    <button
-                        id="sendButton"
-                        onclick="sendPrompt()">
-                        🚀 Send Prompt
-                    </button>
+                    <div class="security-stats">
+                        <div class="stat-card">
+                            <span>Threat score</span>
+                            <strong>02%</strong>
+                            <small>Reduced risk</small>
+                        </div>
+                        <div class="stat-card highlight">
+                            <span>Guardrail pass</span>
+                            <strong>99.8%</strong>
+                            <small>Validated flows</small>
+                        </div>
+                        <div class="stat-card">
+                            <span>Anomaly watch</span>
+                            <strong>14</strong>
+                            <small>Active checks</small>
+                        </div>
+                    </div>
                 </section>
 
-                <section class="pipeline">
-                    <h3>Security Pipeline</h3>
+                <section class="control-panel panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="section-tag">PROMPT VALIDATION</span>
+                            <h2>Test AI Security Controls</h2>
+                        </div>
+                        <div class="status-pill"><span
+                                class="dot"></span>Protected</div>
+                    </div>
 
-                    <p class="pipeline-description">
-                        Every prompt passes through multiple security layers
-                        before reaching the user.
-                    </p>
+                    <div class="input-grid">
+                        <div class="input-wrap">
+                            <label for="prompt">Input prompt</label>
+                            <textarea
+                                id="prompt"
+                                maxlength="5000"
+                                placeholder="Enter a prompt to test the secure AI pipeline..."></textarea>
+
+                            <div class="character-count">
+                                <span id="characterCount">0</span>
+                                / 5000 characters
+                            </div>
+                        </div>
+
+                        <aside class="info-panel">
+                            <p class="panel-title">Guardrail Matrix</p>
+                            <ul>
+                                <li><span>Input checks</span>
+                                    <strong>Enabled</strong></li>
+                                <li><span>Prompt injection</span>
+                                    <strong>Monitored</strong></li>
+                                <li><span>Output validation</span>
+                                    <strong>Active</strong></li>
+                                <li><span>Response integrity</span>
+                                    <strong>Verified</strong></li>
+                            </ul>
+                        </aside>
+                    </div>
+
+                    <div class="action-row">
+                        <button id="sendButton" onclick="sendPrompt()">
+                            Launch Security Scan
+                        </button>
+                        <div class="mini-meta">
+                            <span>Latency</span>
+                            <strong>Low</strong>
+                        </div>
+                        <div class="mini-meta">
+                            <span>Model</span>
+                            <strong>Gemini</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pipeline panel">
+                    <div class="panel-header center-header">
+                        <div>
+                            <span class="section-tag">SECURITY FLOW</span>
+                            <h3>Defense Pipeline</h3>
+                        </div>
+                    </div>
 
                     <div class="pipeline-row">
-
                         <div id="stepUser" class="pipeline-step">
                             <span class="step-icon">👤</span>
                             <strong>User</strong>
@@ -84,7 +157,7 @@
                         <div class="arrow">→</div>
 
                         <div id="stepOutput" class="pipeline-step">
-                            <span class="step-icon">🛡️</span>
+                            <span class="step-icon">🔐</span>
                             <strong>Output Guardrail</strong>
                             <small>Security Check</small>
                         </div>
@@ -96,17 +169,15 @@
                             <strong>Response</strong>
                             <small>User</small>
                         </div>
-
                     </div>
                 </section>
 
                 <section id="statusBox" class="status hidden"></section>
 
                 <section id="securityBox" class="security-box hidden">
-                    <h3>🛡️ Security Result</h3>
+                    <h3>Security Result</h3>
 
                     <div class="security-grid">
-
                         <div class="security-item">
                             <span>Stage</span>
                             <strong id="stageValue">-</strong>
@@ -121,84 +192,65 @@
                             <span>Message</span>
                             <strong id="messageValue">-</strong>
                         </div>
-
                     </div>
                 </section>
 
                 <section id="responseBox" class="response hidden">
-
                     <div class="response-header">
                         <div>
                             <span class="response-icon">🤖</span>
                             <h3>Gemini Response</h3>
                         </div>
 
-                        <span class="safe-badge">
-                            ✓ Guardrail Passed
-                        </span>
+                        <span class="safe-badge">✓ Guardrail Passed</span>
                     </div>
 
                     <div id="responseText" class="response-text"></div>
                 </section>
 
-                <section class="workshop-info">
-
-                    <h3>What This Demo Demonstrates</h3>
+                <section class="workshop-info panel">
+                    <div class="section-tag">DEMO SCOPE</div>
+                    <h3>What this security demo covers</h3>
 
                     <div class="info-grid">
-
                         <div class="info-card">
                             <div class="info-icon">🛡️</div>
                             <h4>Input Guardrails</h4>
-                            <p>
-                                Detect blocked keywords, prompt injection and
-                                jailbreak attempts.
-                            </p>
+                            <p>Detect blocked keywords, jailbreak patterns, and
+                                prompt injection attempts.</p>
                         </div>
 
                         <div class="info-card">
                             <div class="info-icon">🤖</div>
                             <h4>Generative AI</h4>
-                            <p>
-                                Process safe prompts using Google's Gemini
-                                model.
-                            </p>
+                            <p>Process safe prompts with the Gemini model under
+                                controlled conditions.</p>
                         </div>
 
                         <div class="info-card">
                             <div class="info-icon">🔐</div>
                             <h4>Output Guardrails</h4>
-                            <p>
-                                Validate model responses before showing them to
-                                users.
-                            </p>
+                            <p>Validate generated responses before they are
+                                returned to the user interface.</p>
                         </div>
 
                         <div class="info-card">
                             <div class="info-icon">🏢</div>
                             <h4>Enterprise AI</h4>
-                            <p>
-                                Demonstrate responsible and secure AI
-                                application design.
-                            </p>
+                            <p>Show responsible design principles for secure,
+                                production-grade AI systems.</p>
                         </div>
-
                     </div>
                 </section>
-
             </main>
 
             <footer>
-                <strong>LLM Guardrails</strong>
+                <strong>Sentinel AI</strong>
                 <span>•</span>
-                By Suraj Sanjeev Pawar
-                <span>•</span>
-                Responsible AI & Enterprise AI
+                Responsible AI & Enterprise AI Security
             </footer>
-
         </div>
 
         <script src="/static/script.js"></script>
-
     </body>
 </html>

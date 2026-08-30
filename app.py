@@ -91,9 +91,18 @@ async def generate(request: PromptRequest):
     # STEP 2
     # GEMINI
     # ========================================================
-    model_response = generate_response(
-        user_input
-    )
+    try:
+        model_response = generate_response(
+            user_input
+        )
+    except RuntimeError as exc:
+        return {
+            "status": "error",
+            "stage": "gemini_service",
+            "category": "SERVICE_UNAVAILABLE",
+            "message": str(exc),
+            "response": None
+        }
     # ========================================================
     # STEP 3
     # OUTPUT GUARDRAIL

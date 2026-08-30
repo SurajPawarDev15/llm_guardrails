@@ -141,6 +141,24 @@ async function sendPrompt() {
     }
 
     // ====================================================
+    // SERVICE ERROR
+    // ====================================================
+
+    if (data.status === "error") {
+      stepInput.classList.remove("active");
+      stepInput.classList.add("success");
+      stepGemini.classList.add("blocked");
+
+      showStatus("error", "⚠️ Gemini service is temporarily unavailable.");
+      showSecurityResult(data.stage, data.category, data.message);
+
+      sendButton.disabled = false;
+      sendButton.innerText = "🚀 Send Prompt";
+
+      return;
+    }
+
+    // ====================================================
     // GEMINI
     // ====================================================
 
